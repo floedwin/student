@@ -1,0 +1,65 @@
+{%extends 'base.html'%}
+{% load staticfiles %}
+{% block content %}
+<title>
+{% block title %}Posts{% endblock %}
+  {% block breadcrumb %}
+  <li class="breadcrumb-item active">Posts page!!! </li>
+{% endblock %}
+</title>
+
+
+<body >
+
+<div class="content mt-3">
+            <div class="animated fadeIn">
+                <div class="row">
+
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">Posts</strong>
+                        </div>
+                        <div class="card-body">
+                  <table id="bootstrap-data-table" class="table table-striped table-bordered">
+      <tr>
+        <th>Message</th>
+        <th>Homework</th>
+        <th>Study material</th>
+        <th>Created at</th>
+          <th> Updated at</th>
+          <th> Created by</th>
+           <th> Updated by</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {% for posts in  Post %}
+        <tr>
+          <td>{{ posts.message }}</td>
+            <td>{{ posts.homework }}</td>
+            <td>{{ posts.study_material }}</td>
+            <td>{{ posts.created_at }}</td>
+            <td>{{ posts.updated_at }}</td>
+            <td>{{ posts.created_by }}</td>
+            <td>{{ posts.updated_by }}</td>
+
+        </tr>
+
+      {% endfor %}
+
+  </table>
+
+
+
+       </div>
+                    </div>
+                </div>
+</div>
+                </div>
+    </div>
+
+</body>
+    {% endblock%}
+
+
